@@ -1,0 +1,20 @@
+.screen
+    min-height: 100vh
+
+    &-start
+        position: relative
+        background-image: url(../img/screen-home.jpg)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: auto 100%
+
+        &:before
+            content: ''
+            display: block
+            position: absolute
+            top: 142px // .headerbar height - 8px
+            right: 0
+            bottom: 0
+            left: 0
+            background-color rgba(0, 0, 0, .75)
+
