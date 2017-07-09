@@ -13,6 +13,7 @@ var gulp        = require('gulp'),
     uncss       = require('gulp-uncss');
 
 var cfg = {
+    name: 'dr',
     bowerDir: 'vendor/bower_components/',
     nodeDir: 'node_modules/',
     assetsDir: 'assets/',
@@ -25,10 +26,12 @@ var cfg = {
 // styles
 gulp.task('styles', function()
 {
-    return gulp.src(cfg.assetsDir + 'styl/otis.styl')
+    return gulp.src(cfg.assetsDir + 'styl/' + cfg.name +'.styl')
         .pipe(plumber())
         .pipe(stylus({
             linenos: false,
+            include: ['node_modules'],
+            'include css': true
         }))
         //.pipe(uncss({
         //    html: ['**.html']
@@ -41,17 +44,17 @@ gulp.task('styles', function()
 gulp.task('scripts', function()
 {
     return gulp.src([
-        cfg.assetsDir + 'js/otis.js'
+        cfg.assetsDir + 'js/' + cfg.name +'.js'
         ])
         .pipe(plumber())
-        .pipe(concat('otis.js'))
+        .pipe(concat(cfg.name +'.js'))
         .pipe(uglify())
         .pipe(gulp.dest(cfg.webDir + 'js/'));
 });
 
 // clean
 gulp.task('clean', function() {
-    var files = glob.sync("web/@(js|css)/otis-*.*");
+    var files = glob.sync('web/@(js|css)/' + cfg.name +'-*.*');
     for (var file in files) {
         fs.unlinkSync(files[file]);
     }

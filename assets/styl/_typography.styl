@@ -1,0 +1,57 @@
+html
+    font-size: 62.5%
+
+body
+    font-family: $font.body
+    font-size: unit($fontsize, 'em')
+    line-height: 1.5
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale /* FF */
+
+/* headings */
+_headingText()
+    font-family: $font.heading
+    font-weight: bold
+    line-height: 1.2
+
+h1
+.h1
+    _headingText()
+    font-size: 2 * $fontsize
+
+h2
+.h2
+    _headingText()
+    font-size: 1.5 * $fontsize
+
+h3
+.h3
+    _headingText()
+    font-size: 1.17 * $fontsize
+
+h4
+.h4
+    _headingText()
+    font-size: 1 * $fontsize
+
+h5
+.h5
+    _headingText()
+    font-size: .83 * $fontsize
+
+h6
+.h6
+    _headingText()
+    font-size: .67 * $fontsize
+
+/* misc */
+a
+abbr[title]
+acronym[title]
+    color: $color.link
+
+abbr[title]
+acronym[title]
+    border-bottom: 1px dotted
+    text-decoration: none
+    cursor: help
