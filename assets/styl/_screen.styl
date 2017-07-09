@@ -1,20 +1,94 @@
 .screen
     min-height: 100vh
 
+    &--catchline
+        padding-bottom: 1em
+        font-family: $font.heading
+        font-size: 1.25em
+        line-height: 1
+
+        a&:hover
+            > .border
+                width: 8.25em // large .border width | @todo: please refactor this!
+
+
     &-start
         position: relative
         background-image: url(../img/screen-home.jpg)
         background-repeat: no-repeat
-        background-position: center
+        background-position: center top
         background-size: auto 100%
 
-        &:before
+        h1
+            display: inline-block
+            margin: 0
+            padding-top: 20px
+            padding-right: 180px
+            background-image: url(../img/shapes.png)
+            background-repeat: no-repeat
+            background-position: right top
+            color: white
+            font-size: 6.625em
+            line-height: .8
+            text-transform: uppercase
+
+            > span
+                color: $colour.scarlet
+
+        &--content
+            position: absolute
+            z-index: 2
+            top: calc((100vh + 150px) / 2) // half of (container's height + .headerbar height)
+            right: 0
+            left: 0
+            transform: translateY(-50%)
+
+        &--scroll
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            position: absolute
+            z-index: 3
+            bottom: 2em
+            left: 50%
+            margin: 0 auto
+            width: 5em
+            height: @width
+            border-radius: 200em // high value to make it round
+            background-color: rgba(255, 255, 255, 60%) // @todo: replace rgb value by $color-default
+            color: $colour.black
+            font-size: .75em
+            line-height: .9
+            text-align: center
+            transform: translateX(-50%)
+            transition: .2s all
+
+            > span
+                display block
+                margin-bottom: .75em
+                font-size: 1.2em
+                transition: .2s margin-bottom
+
+            &:hover
+                bottom: 1.5em
+                padding: 1em
+                width: 6em
+                height: @width
+                background-color: rgba(255, 255, 255, 100%) // @todo: replace rgb value by $color-default
+
+                > span
+                    margin-bottom: .25em
+
+
+        &:after
             content: ''
             display: block
             position: absolute
+            z-index: 1
             top: 142px // .headerbar height - 8px
             right: 0
             bottom: 0
             left: 0
-            background-color rgba(0, 0, 0, .75)
+            background-color: rgba(0, 0, 0, .75)
 
