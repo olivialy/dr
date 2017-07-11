@@ -1,18 +1,15 @@
-// Grids
-for breakpoint, query in $screen
-    @media query
-        for i in (1..$columns)
-            .{breakpoint}-{i}
-                float: left
-                width: round(100 * i / $columns, 3) * 1%
-
-            .{breakpoint}-offset-{i}
-                margin-left: round(100 * i / $columns, 3) * 1%
-
 // Mixins
 _make_column(breakpoint, colspan)
     @media $screen[breakpoint]
         float: left
         width: round(100 * colspan / $columns, 3) * 1%
 
+// Grids
+for breakpoint, query in $screen
+    @media query
+        for i in (1..$columns)
+            .{breakpoint}-{i}
+                _make_column(breakpoint, i)
 
+            .{breakpoint}-offset-{i}
+                margin-left: round(100 * i / $columns, 3) * 1%

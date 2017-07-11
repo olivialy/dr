@@ -1,0 +1,88 @@
+.lt-start
+    padding-top: 150px // .headerbar height
+    padding-bottom: 1em
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background-image: url(../img/screen-home.jpg)
+    background-repeat: no-repeat
+    background-position: center top
+    background-size: auto 100%
+
+    h1
+        display: inline-block
+        margin: 0
+        padding-top: .19em
+        padding-right: 1.7em
+        background-image: url(../img/shapes.png)
+        background-repeat: no-repeat
+        background-position: right top
+        background-size: 1.63em auto
+        color: white
+        font-size: 11vw
+        line-height: .8
+        text-transform: uppercase
+
+        > span
+            color: $colour.scarlet
+
+
+        @media $screen.xs
+           font-size: 2.625em
+
+
+        @media $screen.lg
+            font-size: 6.625em
+
+    &--content
+        position: relative
+        z-index: 2
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        justify-content: center
+
+        @media $screen.xs
+            align-items: center
+
+    &--scroll
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+        z-index: 3
+        width: 5em
+        height: @width
+        border-radius: 200em // high value to make it round
+        background-color: rgba(255, 255, 255, 60%) // @todo: replace rgb value by $color-default
+        color: $colour.black
+        font-size: .75em
+        line-height: .9
+        text-align: center
+        transition: .2s all
+
+        > span
+            display block
+            margin-bottom: .75em
+            font-size: 1.2em
+            transition: .2s margin-bottom, .2s background-color
+
+        &:hover
+            background-color: rgba(255, 255, 255, 100%) // @todo: replace rgb value by $color-default
+
+            > span
+                margin-bottom: .25em
+
+
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        z-index: 1
+        top: 142px // .headerbar height - 8px
+        width: 100%
+        height: calc(100% - 150px + 8px) // parent height - .headerbar height + 8px
+        background-color: rgba(0, 0, 0, .75)
+
