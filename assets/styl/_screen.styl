@@ -1,9 +1,18 @@
 .screen
     min-height: 100vh
 
+    // modifiers
+    &-start
+        display flex
+
     for tint, colour in $colour
         &-{tint}
             background-color: colour
+
+    // elements
+    img
+        max-width: 100%
+        height: auto
 
     &--content
         display: flex
@@ -23,10 +32,6 @@
     &--illustration
         justify-content: flex-end
 
-        img
-            max-width: 100%
-            height: auto
-
         &-vcenter
             justify-content: center
 
@@ -39,7 +44,7 @@
         padding-bottom: .5em
         color: $colour.default
         font-size: 3.125em
-        line-height: 0.9
+        line-height: 1
         text-transform: uppercase
 
     &--catchline

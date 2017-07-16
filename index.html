@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Digitel Reserv</title>
     <link href="web/css/dr.css"  rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet">
 </head>
 <body>
 <header class="headerbar">
@@ -88,7 +88,7 @@
         <div class="screen--illustration screen--illustration-vcenter md-6">
             <img src="web/img/proud.png" alt="" width="651" height="713" />
         </div>
-        <div class="screen--about">
+        <div class="screen--about md-6">
             <img class="screen--icon" src="web/svg/smiley-playful.svg" alt="" />
             <h2 class="screen--title">Nous sommes<br>fiers</h2>
             <p class="screen--catchline colour-default">
@@ -124,13 +124,13 @@
     </div>
 </section>
 
-<!-- proud screen -->
+<!-- pop screen -->
 <section class="screen screen-lightblue">
     <div class="content screen--content">
         <div class="screen--illustration screen--illustration-vcenter md-5 md-offset-1">
             <img src="web/img/pop.png" alt="" width="306" height="672" />
         </div>
-        <div class="screen--about">
+        <div class="screen--about md-6">
             <img class="screen--icon" src="web/svg/smiley-oh.svg" alt="" />
             <h2 class="screen--title">Nous sommes<br>pop</h2>
             <p class="screen--catchline colour-default">
@@ -142,6 +142,37 @@
                 <span class="border"></span>
             </a>
         </div>
+    </div>
+</section>
+
+<!-- contact screen -->
+<section class="screen screen-yellow lt-contact">
+    <div class="content lt-contact--content">
+        <h2 class="screen--title align-center pt2">Un projet à venir&nbsp;?<br>Un projet à lancer&nbsp;?</h2>
+        <form action="/">
+            <div class="lt-contact--illustration md-6 pr2">
+                <img src="web/img/contact.png" alt="" width="656" height="515" />
+            </div>
+            <div class="md-6 pr1 pl1">
+                <p class="pb1">
+                    <label for="name" class="sr-only">Votre nom</label>
+                    <input id="name" type="text" placeholder="Nom" />
+                </p>
+                <p class="pb1">
+                    <label for="company" class="sr-only">Nom de votre société</label>
+                    <input id="company" type="text" placeholder="Société" />
+                </p>
+                <p class="pb1">
+                    <label for="email" class="sr-only">Votre e-mail</label>
+                    <input id="email" type="text" placeholder="E-mail" />
+                </p>
+                <p class="pb1">
+                    <label for="message" class="sr-only">Votre message</label>
+                    <textarea id="message" placeholder="Message" rows="8"></textarea>
+                </p>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
     </div>
 </section>
 </body>
