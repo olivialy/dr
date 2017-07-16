@@ -44,6 +44,9 @@ gulp.task('styles', function()
 gulp.task('scripts', function()
 {
     return gulp.src([
+        cfg.nodeDir + '/jquery/dist/jquery.js',
+        cfg.nodeDir + '/headroom.js/dist/headroom.js',
+        cfg.nodeDir + '/headroom.js/dist/jQuery.headroom.js',
         cfg.assetsDir + 'js/' + cfg.name +'.js'
         ])
         .pipe(plumber())
