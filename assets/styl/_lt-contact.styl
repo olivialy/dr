@@ -1,8 +1,5 @@
 .lt-contact
     button
-        position: absolute
-        bottom: 2em
-        left: 50%
         padding: .5em 1em
         border: none
         background-color: $colour.darkgrey
@@ -11,12 +8,31 @@
         text-transform: uppercase
         transform: translateX(-50%)
 
+        @media $screen.xs
+            margin-left: 50%
+
+        @media $screen.sm
+            position: absolute
+            bottom: 2em
+            left: 50%
+
+    fieldset
+        border: none
+
+        @media $screen.sm
+            order: 2
+
     form
-        position relative
-        flex-grow: 1
-        display: flex
-        align-items: stretch
-        padding-top: 2em
+        padding-bottom: 2em
+
+        @media $screen.sm
+            position: relative
+            flex-grow: 1
+            order: 2
+            display: flex
+            align-items: stretch
+            padding-top: 2em
+            padding-bottom: 0
 
     &--content
         display: flex
@@ -24,11 +40,16 @@
         min-height: 100vh
 
     &--illustration
-        position: relative
-        overflow: hidden
+        @media $screen.xs
+            display: none
 
-        > img
-            position: absolute
-            top: 0
-            right: 0
-            max-width: inherit!important
+        @media $screen.sm
+            order: 1
+            position: relative
+            overflow: hidden
+
+            > img
+                position: absolute
+                top: 0
+                right: 0
+                max-width: inherit!important

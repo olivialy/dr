@@ -17,8 +17,12 @@
     &--content
         display: flex
         align-items: stretch
-        height: 100vh
+        min-height: 100vh
         overflow: auto
+
+        @media $screen.xs
+            flex-direction: column
+            padding-top: 3em
 
     &--about
     &--illustration
@@ -35,6 +39,9 @@
         &-vcenter
             justify-content: center
 
+        @media $screen.xs
+            order: 2
+
     &--icon
         width: 3.625em
         height: @width
@@ -43,9 +50,15 @@
     &--title
         padding-bottom: .5em
         color: $colour.default
-        font-size: 3.125em
+        font-size: 7.5vw
         line-height: 1
         text-transform: uppercase
+
+        @media $screen.xs
+            font-size: 2.125em
+
+        @media $screen.md
+            font-size: 3.125em
 
     &--catchline
         padding-bottom: 1em
