@@ -1,6 +1,38 @@
 .screen
     min-height: 100vh
 
+    img
+        max-width: 100%
+        height: auto
+
+    for tint, colour in $colour
+        &-{tint}
+            background-color: colour
+
+    &--content
+        display: flex
+        align-items: stretch
+        height: 100vh
+        overflow: auto
+
+    &--about
+    &--illustration
+        display: flex
+        flex-direction: column
+
+    &--about
+        justify-content: center
+
+    &--illustration
+        justify-content: flex-end
+
+    &--title
+        padding-bottom: .5em
+        color: $colour.default
+        font-size: 3.125em
+        line-height: 0.9
+        text-transform: uppercase
+
     &--catchline
         padding-bottom: 1em
         font-family: $font.heading

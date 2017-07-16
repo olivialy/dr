@@ -1,6 +1,6 @@
 .border
     display: block
-    margin: .8em 0
+    margin: .8em 0 0
     width: 3.375em
     height: .25em
     border-top-style: solid
@@ -12,3 +12,7 @@
 
     &-large
         width: 8.25em
+
+    for tint, colour in $colour
+        &-{tint}
+            border-color colour
