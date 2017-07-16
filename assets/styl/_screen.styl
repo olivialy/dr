@@ -1,10 +1,6 @@
 .screen
     min-height: 100vh
 
-    img
-        max-width: 100%
-        height: auto
-
     for tint, colour in $colour
         &-{tint}
             background-color: colour
@@ -19,12 +15,25 @@
     &--illustration
         display: flex
         flex-direction: column
+        padding: 0 1em
 
     &--about
         justify-content: center
 
     &--illustration
         justify-content: flex-end
+
+        img
+            max-width: 100%
+            height: auto
+
+        &-vcenter
+            justify-content: center
+
+    &--icon
+        width: 3.625em
+        height: @width
+        margin-bottom: 1.5em
 
     &--title
         padding-bottom: .5em
