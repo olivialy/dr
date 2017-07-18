@@ -9,6 +9,7 @@ var gulp        = require('gulp'),
     rev         = require('gulp-rev'),
     runSequence = require('run-sequence'),
     stylus      = require('gulp-stylus'),
+    svgstore      = require('gulp-svgstore'),
     uglify      = require('gulp-uglify'),
     uncss       = require('gulp-uncss');
 
@@ -20,7 +21,8 @@ var cfg = {
     revManifestPath: 'assets/rev-manifest.json',
     webDir: 'web/',
     stylusPattern: 'styl/**/*.styl',
-    jsPattern: 'js/**/*.js'
+    jsPattern: 'js/**/*.js',
+    svgPattern: 'svg/**/*.svg'
 };
 
 // styles
@@ -53,6 +55,19 @@ gulp.task('scripts', function()
         .pipe(concat(cfg.name +'.js'))
         .pipe(uglify())
         .pipe(gulp.dest(cfg.webDir + 'js/'));
+});
+
+// svg
+gulp.task('svg', function () {
+    return gulp
+        .src(cfg.assetsDir + '/' + cfg.svgPattern, {base: cfg.assetsDir + '/svg'})
+        .pipe(rename(function (filePath) {
+            var name = filePath.dirname !== '.' ? filePath.dirname.split(filePath.sep) : [];
+            name.push(filePath.basename);
+            filePath.basename = 'symbol-' + name.join('-');
+        }))
+        .pipe(svgstore({inlineSvg: true}))
+        .pipe(gulp.dest(cfg.webDir + '/svg'));
 });
 
 // clean

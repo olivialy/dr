@@ -1,0 +1,26 @@
+.iconlist
+    display: inline
+    text-align: center
+    list-style-type: none
+
+    > li
+        //display: inline-block
+        float: left
+        width: 20%
+        font-size: .8em
+        text-align: center
+        color: $colour.default
+
+        @media $screen.sm
+            font-size: 3vw
+
+        @media $screen.lg
+            font-size: 2.2em
+
+    svg
+        display: block
+        width: 2.2em
+        height: @width
+        margin: 0 auto
+
+

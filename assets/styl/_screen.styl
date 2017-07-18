@@ -2,9 +2,6 @@
     min-height: 100vh
 
     // modifiers
-    &-start
-        display flex
-
     for tint, colour in $colour
         &-{tint}
             background-color: colour
@@ -46,6 +43,7 @@
         width: 3.625em
         height: @width
         margin-bottom: 1.5em
+        fill: $colour.default
 
     &--title
         padding-bottom: .5em
