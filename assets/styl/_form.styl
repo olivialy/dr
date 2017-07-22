@@ -3,5 +3,11 @@ textarea
     width: 100%
     padding: .3em .75em
     border: 1px solid $colour.default
-    background-color: transparent
+    background-color: rgba($colour.default, 0)
     color: $colour.default
+    transition background-color .2s, color .2s
+
+    &:focus
+        background-color: rgba($colour.default, 1)
+        color: $colour.darkgrey
+        outline: none
