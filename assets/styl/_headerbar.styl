@@ -4,21 +4,36 @@
     right: 0
     left: 0
     z-index: 20
-    height: 150px
-    padding: 22px 15px 0
+    height: 9.375em
+    padding: 1.25em 1em 0
     background-color: rgba(255, 255, 255, .6)
-    transition: top .25s .5s
+    transition: all .25s
 
-    &-brand
+    img
         position: absolute
-        bottom: 8px
+        top: 1.25em // .headerbar padding-top
         left: 50%
         transform: translateX(-50%)
+        transition: all .2s
 
-    &.headroom
-        // @todo: set custom classes for headroom.js
-        &--pinned
-            top: 0
+    // modifiers
+    &
+    &-top
+        img
+            width: 8em
+            height: 7.34em
 
-        &--unpinned
-            top: -150px // .headerbar height
+    &-unpinned
+        top: -9.375em // .headerbar height
+
+    &-pinned&-not-top
+    &-not-top
+        img
+            height: 3em
+            width: 3.26em
+            top: 50%
+            transform: translate(-50%, -50%)
+
+    &-pinned&-not-top
+        top: 0
+        height: 4.25em // 2 * 1.25em as vertical paddings + icons height
