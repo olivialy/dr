@@ -1,0 +1,47 @@
+.bouncein
+    tempo = .8s
+    visibility: visible
+
+    &:nth-child(even)
+        animation: bounce-even-side tempo;
+
+    &:nth-child(odd)
+        animation: bounce-odd-side tempo;
+
+    &-hidden
+        visibility: hidden
+        //opacity: 0
+
+@keyframes bounce-odd-side {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce-even-side {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
