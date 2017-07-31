@@ -1,4 +1,6 @@
 jQuery(document).ready(function($){
+    var _windowWidth = window.innerWidth;
+
     // headroom.js
     // handle .headerbar show/hide animation
     $("header").headroom({
@@ -17,39 +19,41 @@ jQuery(document).ready(function($){
 
     // home page
     // animate screen text and image on scroll
-    var $screenBlocks = $('.screen'),
-        offset = .5;
+    if(_windowWidth > 416) {
+        var $screenBlocks = $('.screen'),
+            offset = .5;
 
-    //hide screen blocks which are outside the viewport
-    hideBlocks($screenBlocks, offset);
+        //hide screen blocks which are outside the viewport
+        hideBlocks($screenBlocks, offset);
 
-    //on scrolling, show/animate blocks when they enter the viewport
-    $(window).on('scroll', function(){
-        (!window.requestAnimationFrame)
-            ? setTimeout(function(){ showBlocks($screenBlocks, offset); }, 100)
-            : window.requestAnimationFrame(function(){ showBlocks($screenBlocks, offset); });
-    });
-
-    function hideBlocks(blocks, offset) {
-        blocks.each(function(){
-            var $this = $(this);
-            if ($this.offset().top > $(window).scrollTop() + $(window).height() * offset) {
-                $this.find('.screen--about, .screen--illustration, .lt-contact--fieldset, .lt-contact--illustration').addClass('bounce-hidden');
-            }
+        //on scrolling, show/animate blocks when they enter the viewport
+        $(window).on('scroll', function(){
+            (!window.requestAnimationFrame)
+                ? setTimeout(function(){ showBlocks($screenBlocks, offset); }, 100)
+                : window.requestAnimationFrame(function(){ showBlocks($screenBlocks, offset); });
         });
-    }
 
-    function showBlocks(blocks, offset) {
-        blocks.each(function(){
-            var $this = $(this);
-            if ($this.offset().top <= $(window).scrollTop() + $(window).height() * offset) {
-                if ($this.find('.screen--about, .screen--illustration').hasClass('bounce-hidden')) {
-                    $this.find('.screen--about, .screen--illustration').removeClass('bounce-hidden').addClass('bounce-in');
+        function hideBlocks(blocks, offset) {
+            blocks.each(function(){
+                var $this = $(this);
+                if ($this.offset().top > $(window).scrollTop() + $(window).height() * offset) {
+                    $this.find('.screen--about, .screen--illustration, .lt-contact--fieldset, .lt-contact--illustration').addClass('bounce-hidden');
                 }
-                else if ($this.find('.lt-contact--fieldset, .lt-contact--illustration').hasClass('bounce-hidden')) {
-                    $this.find('.lt-contact--fieldset, .lt-contact--illustration').removeClass('bounce-hidden').addClass('bounce-up');
+            });
+        }
+
+        function showBlocks(blocks, offset) {
+            blocks.each(function(){
+                var $this = $(this);
+                if ($this.offset().top <= $(window).scrollTop() + $(window).height() * offset) {
+                    if ($this.find('.screen--about, .screen--illustration').hasClass('bounce-hidden')) {
+                        $this.find('.screen--about, .screen--illustration').removeClass('bounce-hidden').addClass('bounce-in');
+                    }
+                    else if ($this.find('.lt-contact--fieldset, .lt-contact--illustration').hasClass('bounce-hidden')) {
+                        $this.find('.lt-contact--fieldset, .lt-contact--illustration').removeClass('bounce-hidden').addClass('bounce-up');
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 });

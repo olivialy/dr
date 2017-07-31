@@ -53,7 +53,7 @@ gulp.task('scripts', function()
         ])
         .pipe(plumber())
         .pipe(concat(cfg.name +'.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(cfg.webDir + 'js/'));
 });
 
