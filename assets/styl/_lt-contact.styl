@@ -1,4 +1,6 @@
 .lt-contact
+    overflow-y: hidden
+
     button
         padding: .5em 1em
         border: none
@@ -10,12 +12,6 @@
 
         @media $screen.xs
             margin-left: 50%
-
-    fieldset
-        border: none
-
-        @media $screen.sm
-            order: 2
 
     form
         padding-bottom: 2em
@@ -32,6 +28,12 @@
     &--content
         display: flex
         flex-direction: column
+
+    &--fieldset
+        border: none
+
+        @media $screen.sm
+            order: 2
 
     &--illustration
         @media $screen.xs

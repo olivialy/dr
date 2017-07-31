@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 
     // home page
     // animate screen text and image on scroll
-    var $screenBlocks = $('.screen--content'),
+    var $screenBlocks = $('.screen'),
         offset = .5;
 
     //hide screen blocks which are outside the viewport
@@ -34,7 +34,7 @@ jQuery(document).ready(function($){
         blocks.each(function(){
             var $this = $(this);
             if ($this.offset().top > $(window).scrollTop() + $(window).height() * offset) {
-                $this.find('.screen--about, .screen--illustration').addClass('bouncein-hidden');
+                $this.find('.screen--about, .screen--illustration, .lt-contact--fieldset, .lt-contact--illustration').addClass('bounce-hidden');
             }
         });
     }
@@ -42,8 +42,13 @@ jQuery(document).ready(function($){
     function showBlocks(blocks, offset) {
         blocks.each(function(){
             var $this = $(this);
-            if ($this.offset().top <= $(window).scrollTop() + $(window).height() * offset && $this.find('.screen--about, .screen--illustration').hasClass('bouncein-hidden')) {
-                $(this).find('.screen--about, .screen--illustration').removeClass('bouncein-hidden').addClass('bouncein');
+            if ($this.offset().top <= $(window).scrollTop() + $(window).height() * offset) {
+                if ($this.find('.screen--about, .screen--illustration').hasClass('bounce-hidden')) {
+                    $this.find('.screen--about, .screen--illustration').removeClass('bounce-hidden').addClass('bounce-in');
+                }
+                else if ($this.find('.lt-contact--fieldset, .lt-contact--illustration').hasClass('bounce-hidden')) {
+                    $this.find('.lt-contact--fieldset, .lt-contact--illustration').removeClass('bounce-hidden').addClass('bounce-up');
+                }
             }
         });
     }
