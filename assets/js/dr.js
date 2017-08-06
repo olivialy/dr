@@ -1,6 +1,10 @@
 $(function() {
     var _isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
-        _windowWidth = window.innerWidth;
+        _windowWidth = window.innerWidth,
+        $modal = $('#mymodal'),
+        $videoplayer = $('#videoplayer'),
+        $video1 = null,
+        $video2 = null;
 
     // headroom.js
     // handle .headerbar show/hide animation
@@ -58,13 +62,34 @@ $(function() {
         }
     }
 
+    // load showreel video
     if(false === _isMobile) {
-        // load showreel video
-        $('#videowrap').html('<video id="myvideo" width="100%" height="100%" autoplay muted loop><source src="web/video/showreel.mp4" type=\'video/mp4;codecs="avc1.42E01E, mp4a.40.2"\'></video>');
+        $('#videocover').html('<video id="video1" class="videowrap--cover" width="100%" height="100%" autoplay muted loop preload="metadata"><source src="web/video/showreel.mp4"></video>');
+        $video1 = $('#video1');
     }
 
+    // trigger modal video
+    $('#videoplay').on('click', function(e) {
+        e.preventDefault();
 
-    $(window).on('load', function() {
-        console.log('window load !!!');
+        if(0 === $('#video2').length) {
+            $('#videoplayer').html('<video id="video2" width="100%" height="100%" controls preload="metadata"><source src="web/video/showreel2.mp4"></video>');
+            $video2 = $('#video2');
+        }
+
+        if(null !== $video1) {
+            $video1[0].pause();
+        }
+        $modal.removeAttr('aria-hidden');
+        $video2[0].play();
+    });
+
+    $modal.on('click', '.modal--close', function() {
+        if(null !== $video1) {
+            $video1[0].play();
+        }
+        $modal.attr('aria-hidden', true);
+        $video2[0].pause();
+        $video2[0].currentTime = 0;
     });
 });

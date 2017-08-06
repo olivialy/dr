@@ -1,0 +1,25 @@
+.modal
+    position: fixed
+    z-index: 30
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .9)
+    transform: translateY(0%)
+    transition: transform .2s
+
+    &[aria-hidden=true]
+        transform: translateY(-100%)
+
+    > button
+        position: absolute
+        z-index: 2
+        top: 1em
+        right: 1em
+        border: none
+        background-color: transparent
+        color: $colour.default
+        font-size: 2em
+        line-height: 1
+        cursor: pointer
