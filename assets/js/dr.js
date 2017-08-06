@@ -1,5 +1,6 @@
-jQuery(document).ready(function($){
-    var _windowWidth = window.innerWidth;
+$(function() {
+    var _isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
+        _windowWidth = window.innerWidth;
 
     // headroom.js
     // handle .headerbar show/hide animation
@@ -56,4 +57,14 @@ jQuery(document).ready(function($){
             });
         }
     }
+
+    if(false === _isMobile) {
+        // load showreel video
+        $('#videowrap').html('<video id="myvideo" width="100%" height="100%" autoplay muted loop><source src="web/video/showreel.mp4" type=\'video/mp4;codecs="avc1.42E01E, mp4a.40.2"\'></video>');
+    }
+
+
+    $(window).on('load', function() {
+        console.log('window load !!!');
+    });
 });
