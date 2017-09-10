@@ -4,6 +4,29 @@
         &-{tint}
             background-color: colour
 
+    &-conviction
+        background-image: url(../img/bg-conviction.jpg)
+        background-repeat: no-repeat
+        background-position: center bottom
+        background-size: auto 100%
+
+    &-pop
+        background-image: url(../img/bg-pop.jpg)
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100% 640px
+
+        @media $screen.sm
+            .screen--illustration
+                background-image: url(../img/halo.png)
+                background-repeat: no-repeat
+                background-position: center top
+                background-size: 100% 90%
+
+                img
+                    max-width: 60%
+                    margin: 0 auto
+
     // elements
     img
         max-width: 100%
