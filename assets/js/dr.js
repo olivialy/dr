@@ -1,7 +1,7 @@
 $(function() {
     var _isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
         _windowWidth = window.innerWidth,
-        $modal = $('#mymodal'),
+        $modalvideo = $('#modalvideo'),
         $videoplayer = $('#videoplayer'),
         $scrolldown = $('#scrolldown'),
         $video1 = null,
@@ -81,16 +81,16 @@ $(function() {
         if(null !== $video1) {
             $video1[0].pause();
         }
-        $modal.removeAttr('aria-hidden');
+        $modalvideo.removeAttr('aria-hidden');
         $video2[0].play();
     });
 
     // close modal video
-    $modal.on('click', '.modal--close', function() {
+    $modalvideo.on('click', '.modal--close', function() {
         if(null !== $video1) {
             $video1[0].play();
         }
-        $modal.attr('aria-hidden', true);
+        $modalvideo.attr('aria-hidden', true);
         $video2[0].pause();
         $video2[0].currentTime = 0;
     });
