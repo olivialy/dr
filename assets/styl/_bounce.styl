@@ -3,72 +3,72 @@
     visibility: visible
 
     &-in:nth-child(even)
-        animation: bouncein-even-side tempo;
+        animation: bouncein-even-side tempo
 
     &-in:nth-child(odd)
-        animation: bouncein-odd-side tempo;
+        animation: bouncein-odd-side tempo
 
     &-up:nth-child(even)
-        animation: bounceup-even-side tempo;
+        animation: bounceup-even-side tempo
 
     &-up:nth-child(odd)
-        animation: bounceup-odd-side tempo;
+        animation: bounceup-odd-side tempo
 
     &-hidden
         visibility: hidden
 
-@keyframes bouncein-odd-side {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 0;
-        transform: translateX(-200px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateX(20px);
-    }
+@keyframes bouncein-odd-side 
+    0% 
+        opacity: 0
+    
+    20% 
+        opacity: 0
+        transform: translateX(-200px)
+    
+    60% 
+        opacity: 1
+        transform: translateX(20px)
+    
 
-    100% {
-        transform: translateX(0);
-    }
-}
+    100% 
+        transform: translateX(0)
+    
 
-@keyframes bouncein-even-side {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
 
-    40% {
-        opacity: 1;
-        transform: translateX(-20px);
-    }
+@keyframes bouncein-even-side 
+    0% 
+        opacity: 0
+        transform: translateX(100px)
+    
 
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes bounceup-odd-side {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    80% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes bounceup-even-side {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+    40% 
+        opacity: 1
+        transform: translateX(-20px)
+    
+
+    100% 
+        transform: translateX(0)
+    
+
+@keyframes bounceup-odd-side 
+    0% 
+        opacity: 0
+        transform: translateY(-100%)
+    
+    80% 
+        opacity: 1
+        transform: translateY(0)
+    
+
+@keyframes bounceup-even-side 
+    0% 
+        opacity: 0
+    
+    20% 
+        opacity: 1
+        transform: translateY(100%)
+    
+    100% 
+        transform: translateY(0)
+    
+
