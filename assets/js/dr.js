@@ -3,6 +3,7 @@ $(function() {
         _windowWidth = window.innerWidth,
         $modal = $('#mymodal'),
         $videoplayer = $('#videoplayer'),
+        $scrolldown = $('#scrolldown'),
         $video1 = null,
         $video2 = null;
 
@@ -84,6 +85,7 @@ $(function() {
         $video2[0].play();
     });
 
+    // close modal video
     $modal.on('click', '.modal--close', function() {
         if(null !== $video1) {
             $video1[0].play();
@@ -91,5 +93,17 @@ $(function() {
         $modal.attr('aria-hidden', true);
         $video2[0].pause();
         $video2[0].currentTime = 0;
+    });
+
+    // start screen scroll down button
+    $scrolldown.on('click', function(e) {
+        e.preventDefault();
+
+        var _target = $(this).attr('href'),
+            _value = $(_target).offset().top;
+        console.log(_target);
+        $("html, body").stop(true, false).animate({
+            scrollTop: _value
+        }, 1000);
     });
 });
