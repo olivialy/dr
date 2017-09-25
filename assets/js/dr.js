@@ -1,6 +1,7 @@
 $(function() {
-    var _isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
-        _windowWidth = window.innerWidth,
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
+        windowWidth = window.innerWidth,
+        $body = $('body'),
         $modalvideo = $('#modalvideo'),
         $videoplayer = $('#videoplayer'),
         $scrolldown = $('#scrolldown'),
@@ -15,17 +16,17 @@ $(function() {
         "classes": {
             initial:    'headerbar',              // when element is initialised
             pinned:     'headerbar-pinned',       // when scrolling up
-            unpinned:   'headerbar-unpinned',   // when scrolling down
-            top:        'headerbar-top',              // when above offset
-            notTop:     'headerbar-not-top',       // when below offset
-            bottom:     'headerbar-bottom',        // when at bottom of scoll area
-            notBottom:  'headerbar-not-bottom'  // when not at bottom of scroll area
+            unpinned:   'headerbar-unpinned',     // when scrolling down
+            top:        'headerbar-top',          // when above offset
+            notTop:     'headerbar-not-top',      // when below offset
+            bottom:     'headerbar-bottom',       // when at bottom of scoll area
+            notBottom:  'headerbar-not-bottom'    // when not at bottom of scroll area
         }
     });
 
     // home page
     // animate screen text and image on scroll
-    if(_windowWidth > 416) {
+    if(windowWidth > 416) {
         var $screenBlocks = $('.screen'),
             offset = .5;
 
@@ -63,8 +64,22 @@ $(function() {
         }
     }
 
+    function toggleModal($modal) {
+        // open/close modal
+        // + allow/disallow body scroll
+        if ($modal.is('[aria-hidden]')) {
+            console.log($body);
+            $modal.removeAttr('aria-hidden');
+            $body.css('overflow', 'hidden');
+        } else {
+            console.log($body);
+            $modal.attr('aria-hidden', true);
+            $body.removeAttr('style');
+        }
+    }
+
     // load showreel video
-    if(false === _isMobile) {
+    if(false === isMobile) {
         $('#videocover').html('<video id="video1" class="videowrap--cover" width="100%" height="100%" autoplay muted loop preload="metadata"><source src="web/video/showreel.mp4"></video>');
         $video1 = $('#video1');
     }
@@ -81,7 +96,7 @@ $(function() {
         if(null !== $video1) {
             $video1[0].pause();
         }
-        $modalvideo.removeAttr('aria-hidden');
+        toggleModal($modalvideo);
         $video2[0].play();
     });
 
@@ -90,7 +105,7 @@ $(function() {
         if(null !== $video1) {
             $video1[0].play();
         }
-        $modalvideo.attr('aria-hidden', true);
+        toggleModal($modalvideo);
         $video2[0].pause();
         $video2[0].currentTime = 0;
     });
@@ -99,11 +114,11 @@ $(function() {
     $scrolldown.on('click', function(e) {
         e.preventDefault();
 
-        var _target = $(this).attr('href'),
-            _value = $(_target).offset().top;
-        console.log(_target);
+        var target = $(this).attr('href'),
+            value = $(target).offset().top;
+
         $("html, body").stop(true, false).animate({
-            scrollTop: _value
+            scrollTop: value
         }, 1000);
     });
 });
