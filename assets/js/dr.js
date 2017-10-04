@@ -69,14 +69,23 @@ $(function() {
         // + allow/disallow body scroll
         if ($modal.is('[aria-hidden]')) {
             console.log($body);
-            $modal.removeAttr('aria-hidden');
             $body.css('overflow', 'hidden');
+            $modal.removeAttr('aria-hidden');
         } else {
             console.log($body);
             $modal.attr('aria-hidden', true);
             $body.removeAttr('style');
         }
     }
+
+    // modal toggle button
+    $body.on('click', '[data-modal]', function(e) {
+        e.preventDefault();
+
+        var target = $(this).attr('data-modal'),
+            $target = $(target);
+        toggleModal($target);
+    });
 
     // load showreel video
     if(false === isMobile) {
@@ -96,6 +105,7 @@ $(function() {
         if(null !== $video1) {
             $video1[0].pause();
         }
+
         toggleModal($modalvideo);
         $video2[0].play();
     });
@@ -105,6 +115,7 @@ $(function() {
         if(null !== $video1) {
             $video1[0].play();
         }
+
         toggleModal($modalvideo);
         $video2[0].pause();
         $video2[0].currentTime = 0;

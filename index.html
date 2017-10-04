@@ -30,7 +30,7 @@
     <div class="content">
         <img src="web/img/logo.png" width="134" height="123" alt="Digital Reserv">
         <span class="sr-only">Digital Reserv</span>
-        <a href="#" class="float-left">
+        <a href="#modalmenu" class="float-left" data-modal="#modalmenu">
             <svg height="30" width="30"><use xlink:href="#symbol-menu"></use></svg>
             <span class="sr-only">Menu</span>
         </a>
@@ -241,7 +241,7 @@
 <div id="modalmenu" class="modal" aria-hidden="true">
     <ul class="menu">
         <li class="pb2">
-            <svg height="30" width="30"><use xlink:href="#symbol-menu"></use></svg>
+            <svg height="30" width="30"><use xlink:href="#symbol-menu" data-modal="#modalmenu"></use></svg>
             <span class="sr-only">Menu</span>
         </li>
         <li>
@@ -263,7 +263,7 @@
             <a href="#">Blog</a>
         </li>
     </ul>
-    <button class="modal--close">x <span class="sr-only">Fermer</span></button>
+    <button class="modal--close" data-modal="#modalmenu">x <span class="sr-only">Fermer</span></button>
 </div>
 
 <!-- js -->
