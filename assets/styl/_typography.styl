@@ -19,32 +19,37 @@ _headingText()
 h1
 .h1
     _headingText()
-    font-size: 2 * $fontsize
+    color: $colour.default
+    font-size: 11vw
+    line-height: .8
+    text-transform: uppercase
+
+    > span
+        color: $colour.scarlet
+
+
+    @media $screen.xs
+        font-size: 2.625em
+
+
+    @media $screen.lg
+        font-size: 6.625em
 
 h2
 .h2
     _headingText()
-    font-size: 1.5 * $fontsize
+    padding-bottom: .5em
+    color: $colour.default
+    font-size: 7.5vw
+    line-height: 1
+    text-transform: uppercase
 
-h3
-.h3
-    _headingText()
-    font-size: 1.17 * $fontsize
+    @media $screen.xs
+        font-size: 2.125em
 
-h4
-.h4
-    _headingText()
-    font-size: 1 * $fontsize
+    @media $screen.md
+        font-size: 3.125em
 
-h5
-.h5
-    _headingText()
-    font-size: .83 * $fontsize
-
-h6
-.h6
-    _headingText()
-    font-size: .67 * $fontsize
 
 /* misc */
 a

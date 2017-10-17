@@ -1,4 +1,4 @@
-.lt-start
+.l-start
     padding-top: 150px // .headerbar height
     padding-bottom: 1em
     display: flex
@@ -20,23 +20,11 @@
         background-repeat: no-repeat
         background-position: right top
         background-size: 1.63em auto
-        color: white
-        font-size: 11vw
-        line-height: .8
-        text-transform: uppercase
 
         > span
             color: $colour.scarlet
 
-
-        @media $screen.xs
-           font-size: 2.625em
-
-
-        @media $screen.lg
-            font-size: 6.625em
-
-    &--content
+    &-body
         position: relative
         z-index: 2
         display: flex
@@ -47,7 +35,14 @@
         @media $screen.xs
             align-items: center
 
-    &--scroll
+    &-body-content
+        @media $screen.sm
+            _offset(3)
+
+        @media $screen.md
+            _offset(4)
+
+    &-scrollbtn
         display: flex
         flex-direction: column
         align-items: center
@@ -75,7 +70,6 @@
 
             > span
                 margin-bottom: .25em
-
 
     &:after
         content: ''
