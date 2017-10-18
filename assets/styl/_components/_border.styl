@@ -16,3 +16,8 @@
     for tint, colour in $colour
         &-{tint}
             border-color colour
+
+// Expand border on hover
+a&:hover
+    > &
+        width: 8.25em // .border-large width

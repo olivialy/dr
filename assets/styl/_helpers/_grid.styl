@@ -1,11 +1,4 @@
-// Mixins
-_column(colspan)
-    width: round(100 * colspan / $columns, 3) * 1%
-
-_offset(colspan)
-    margin-left: round(100 * colspan / $columns, 3) * 1%
-
-// Grids
+// Grid helpers
 for breakpoint, query in $screen
     @media query
         for i in (1..$columns)

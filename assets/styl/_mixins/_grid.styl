@@ -1,0 +1,6 @@
+// Grid mixins
+_column(colspan)
+    width: round(100 * colspan / $columns, 3) * 1%
+
+_offset(colspan)
+    margin-left: round(100 * colspan / $columns, 3) * 1%

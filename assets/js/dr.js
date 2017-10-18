@@ -89,7 +89,7 @@ $(function() {
 
     // load showreel video
     if(false === isMobile) {
-        $('#videocover').html('<video id="video1" class="videowrap--cover" width="100%" height="100%" autoplay muted loop preload="metadata"><source src="web/video/showreel.mp4"></video>');
+        $('#videocover').html('<video id="video1" class="l-videowrap-cover" width="100%" height="100%" autoplay muted loop preload="metadata"><source src="web/video/showreel.mp4"></video>');
         $video1 = $('#video1');
     }
 
@@ -111,7 +111,7 @@ $(function() {
     });
 
     // close modal video
-    $modalvideo.on('click', '.modal--close', function() {
+    $modalvideo.on('click', '.modal-close', function() {
         if(null !== $video1) {
             $video1[0].play();
         }
