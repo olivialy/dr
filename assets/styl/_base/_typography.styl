@@ -5,7 +5,7 @@ body
     color: $colour.default
     font-family: $font.body
     font-size: unit($fontsize, 'em')
-    line-height: 1.5
+    line-height: 1.2
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale /* FF */
 
@@ -14,7 +14,6 @@ body
 _headingText()
     font-family: $font.heading
     font-weight: bold
-    line-height: 1.2
 
 h1
     _headingText()
@@ -23,13 +22,8 @@ h1
     line-height: .8
     text-transform: uppercase
 
-    > span
-        color: $colour.scarlet
-
-
     @media $screen.xs
         font-size: 2.625em
-
 
     @media $screen.lg
         font-size: 6.625em
@@ -48,6 +42,8 @@ h2
     @media $screen.md
         font-size: 3.125em
 
+p
+    padding-bottom: 1em
 
 /* misc */
 a

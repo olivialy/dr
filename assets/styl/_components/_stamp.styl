@@ -1,0 +1,22 @@
+.stamp
+    padding: 1.5em 1em
+    margin-bottom: 0.5em
+    text-align: center
+
+    h2
+        padding-bottom: 0.2em
+
+        span
+            text-transform: lowercase
+
+    @media $screen.sm
+        _column(8)
+        _offset(2)
+
+    @media $screen.md
+        _column(6)
+        _offset(3)
+
+    @media $screen.lg
+        _column(4)
+        _offset(4)
