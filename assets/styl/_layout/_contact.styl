@@ -1,5 +1,9 @@
 // Styles for Contact section
 .l-contact
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
     overflow-y: hidden
 
     button
@@ -16,6 +20,7 @@
 
     form
         padding-bottom: 2em
+        width: 100%
 
         @media $screen.sm
             position: relative
@@ -26,9 +31,9 @@
             padding-top: 2em
             padding-bottom: 0
 
-    &-content
-        display: flex
-        flex-direction: column
+    img
+        max-width: 100%
+        height: auto
 
     &-fieldset
         border: none
@@ -36,7 +41,7 @@
         @media $screen.sm
             order: 2
 
-    &-illustration
+    &-aside
         @media $screen.xs
             display: none
 

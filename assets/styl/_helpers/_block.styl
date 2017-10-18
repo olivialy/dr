@@ -1,12 +1,15 @@
 // Block helpers
-.hidden
-    display: none
-
+// Size
 .content
     width: 100%
     max-width: 1170px
     margin: 0 auto
 
+// Display
+.hidden
+    display: none
+
+// Alignments
 .align-center
     text-align: center
 
@@ -20,3 +23,7 @@
 .float-left
     float: left
 
+// Background colors
+for tint, colour in $colour
+    .bg-{tint}
+        background-color: colour

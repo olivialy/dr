@@ -1,0 +1,56 @@
+// Layout for a 2-columned section
+// Used mainly on home page for category teasers
+.l-twain
+    display: flex
+    align-items: stretch
+
+    @media $screen.xs
+        flex-direction: column
+
+    // elements
+    img
+        max-width: 100%
+        height: auto
+
+    svg
+        width: 3.625em
+        height: @width
+        margin-bottom: 1.5em
+        fill: $colour.default
+
+    &-body
+    &-aside
+        display: flex
+        flex-direction: column
+        padding-right: 1em
+        padding-left: @padding-right
+
+    &-body
+        justify-content: center
+
+        @media $screen.xs
+            padding-top: 4em
+
+    &-aside
+        justify-content: flex-end
+
+        &-halo
+            @media $screen.sm
+                padding-top: 4em
+                background-image: url(../img/halo.png)
+                background-repeat: no-repeat
+                background-position: center top
+                background-size: 110% 90%
+
+                img
+                    max-width: 60%
+                    margin: 0 auto
+
+        &-vcenter
+            justify-content: center
+
+        @media $screen.xs
+            order: 2
+
+        @media $screen.sm
+            padding-top: 4em
