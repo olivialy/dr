@@ -44,7 +44,7 @@ $(function() {
             blocks.each(function(){
                 var $this = $(this);
                 if ($this.offset().top > $(window).scrollTop() + $(window).height() * offset) {
-                    $this.find('.screen--about, .screen--illustration, .lt-contact--fieldset, .lt-contact--illustration').addClass('bounce-hidden');
+                    $this.find('.screen--about, .screen--illustration, .l-contact-fieldset, .l-contact-illustration').addClass('bounce-hidden');
                 }
             });
         }
@@ -56,8 +56,8 @@ $(function() {
                     if ($this.find('.screen--about, .screen--illustration').hasClass('bounce-hidden')) {
                         $this.find('.screen--about, .screen--illustration').removeClass('bounce-hidden').addClass('bounce-in');
                     }
-                    else if ($this.find('.lt-contact--fieldset, .lt-contact--illustration').hasClass('bounce-hidden')) {
-                        $this.find('.lt-contact--fieldset, .lt-contact--illustration').removeClass('bounce-hidden').addClass('bounce-up');
+                    else if ($this.find('.l-contact-fieldset, .l-contact-illustration').hasClass('bounce-hidden')) {
+                        $this.find('.l-contact-fieldset, .l-contact-illustration').removeClass('bounce-hidden').addClass('bounce-up');
                     }
                 }
             });
