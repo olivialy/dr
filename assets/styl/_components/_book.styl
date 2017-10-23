@@ -1,0 +1,24 @@
+.book
+    {clearfix}
+    margin-right: -.5em
+    margin-left: -.5em
+    list-style-type: none
+
+    &-item
+        width: 100%
+        margin-bottom: 3em
+
+        img
+            width: 100%
+
+        @media $screen.sm
+            _column(2)
+            float: left
+            padding-right: .5em
+            padding-left: .5em
+
+        @media $screen.md
+             _column(4)
+
+        @media $screen.lg
+             _column(3)
