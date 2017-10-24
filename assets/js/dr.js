@@ -25,26 +25,25 @@ $(function() {
     });
 
     // home page
-    // animate screen text and image on scroll
+    // animate teaser text and image on scroll
     if(windowWidth > 416) {
-        var $screenBlocks = $('.screen'),
+        var $teaserBlocks = $('.l-teaser, .l-contact'),
             offset = .5;
-
-        //hide screen blocks which are outside the viewport
-        hideBlocks($screenBlocks, offset);
+        //hide teaser blocks which are outside the viewport
+        hideBlocks($teaserBlocks, offset);
 
         //on scrolling, show/animate blocks when they enter the viewport
         $(window).on('scroll', function(){
             (!window.requestAnimationFrame)
-                ? setTimeout(function(){ showBlocks($screenBlocks, offset); }, 100)
-                : window.requestAnimationFrame(function(){ showBlocks($screenBlocks, offset); });
+                ? setTimeout(function(){ showBlocks($teaserBlocks, offset); }, 100)
+                : window.requestAnimationFrame(function(){ showBlocks($teaserBlocks, offset); });
         });
 
         function hideBlocks(blocks, offset) {
             blocks.each(function(){
                 var $this = $(this);
                 if ($this.offset().top > $(window).scrollTop() + $(window).height() * offset) {
-                    $this.find('.screen--about, .screen--illustration, .l-contact-fieldset, .l-contact-illustration').addClass('bounce-hidden');
+                    $this.find('.l-teaser-aside, .l-teaser-body, .l-contact-fieldset, .l-contact-aside').addClass('bounce-hidden');
                 }
             });
         }
@@ -53,11 +52,11 @@ $(function() {
             blocks.each(function(){
                 var $this = $(this);
                 if ($this.offset().top <= $(window).scrollTop() + $(window).height() * offset) {
-                    if ($this.find('.screen--about, .screen--illustration').hasClass('bounce-hidden')) {
-                        $this.find('.screen--about, .screen--illustration').removeClass('bounce-hidden').addClass('bounce-in');
+                    if ($this.find('.l-teaser-aside, .l-teaser-body').hasClass('bounce-hidden')) {
+                        $this.find('.l-teaser-aside, .l-teaser-body').removeClass('bounce-hidden').addClass('bounce-in');
                     }
-                    else if ($this.find('.l-contact-fieldset, .l-contact-illustration').hasClass('bounce-hidden')) {
-                        $this.find('.l-contact-fieldset, .l-contact-illustration').removeClass('bounce-hidden').addClass('bounce-up');
+                    else if ($this.find('.l-contact-fieldset, .l-contact-aside').hasClass('bounce-hidden')) {
+                        $this.find('.l-contact-fieldset, .l-contact-aside').removeClass('bounce-hidden').addClass('bounce-up');
                     }
                 }
             });
@@ -68,11 +67,9 @@ $(function() {
         // open/close modal
         // + allow/disallow body scroll
         if ($modal.is('[aria-hidden]')) {
-            console.log($body);
             $body.css('overflow', 'hidden');
             $modal.removeAttr('aria-hidden');
         } else {
-            console.log($body);
             $modal.attr('aria-hidden', true);
             $body.removeAttr('style');
         }
@@ -121,7 +118,7 @@ $(function() {
         $video2[0].currentTime = 0;
     });
 
-    // start screen scroll down button
+    // start teaser scroll down button
     $scrolldown.on('click', function(e) {
         e.preventDefault();
 

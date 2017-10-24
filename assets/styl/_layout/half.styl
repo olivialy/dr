@@ -1,0 +1,28 @@
+.l-half
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+    &-section
+        &:nth-of-type(2n+1)
+            align-items: flex-end
+
+        &:nth-of-type(2n)
+            align-items: flex-start
+
+    &-section-content
+        max-width: 585px // half .content width
+
+    @media $screen.xs
+        flex-direction: column
+
+
+    @media $screen.md
+        flex-direction: row
+
+        &-section
+            display: flex
+            flex-direction: column
+            justify-content: center
+            width: 50%
+
