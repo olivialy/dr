@@ -1,0 +1,60 @@
+.flexblock
+    margin: 0 -.5em 1em -.5em
+    display: flex
+    align-items: stretch
+    flex-direction: column
+
+    > .flexblock
+        margin-right: 0
+        margin-bottom: 0
+        margin-left: 0
+
+        &:first-child
+            margin-bottom: 1em
+
+    @media $screen.lg
+        flex-direction: row
+
+    @media $screen.md
+        > .flexblock
+            flex-direction: row
+
+        &:first-child
+            margin-bottom: 0
+
+    &-content
+        margin: 0 .5em
+        padding: 1em
+        background-color: rgba(#414042, .4)
+
+        h2
+            font-family: $font.body
+            font-size: 1em
+            font-weight: normal
+
+        h3
+            display: inline-block
+            margin-bottom: .5em
+            padding-bottom: .5em
+            border-bottom: 1px solid
+            font-family: $font.body
+            font-size: 1em
+            font-weight: bold
+            text-transform: uppercase
+
+        ul
+            list-style: none
+
+        li
+            padding-bottom: .5em
+            font-weight: bold
+
+    &-aside
+        margin: 0 .5em
+        display: flex
+        align-items: center
+        background-color: rgba(#414042, .4)
+
+        > img
+            width 100%
+            height: auto
