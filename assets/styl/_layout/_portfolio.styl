@@ -1,0 +1,36 @@
+.l-portfolio
+    padding-bottom: 357px // background image height + 30px
+    background-image: url(../img/bg-portfolio.png)
+    background-repeat: repeat-x
+    background-position: center bottom
+    overflow-x: hidden
+
+    h2
+        font-size: 1.5em
+
+        > span
+            color: #50d1f9
+            font-size: 1.5em
+
+    &-title
+        padding-top: 35%
+        position: relative
+        background-image: url(../img/skin-portfolio.png)
+        background-repeat: repeat-x
+        background-position: center top
+        background-size: 100% 100%
+
+        @media $screen.lg
+            height: 445px
+            padding-top: 0
+
+        img
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            max-width: 200%
+
+            @media $screen.lg
+                max-width: none
+
