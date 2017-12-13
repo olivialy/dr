@@ -24,6 +24,24 @@ $(function() {
         }
     });
 
+    // handle .balloon fixed positioning on scroll
+    if (0 < $(".balloon").length) {
+        var balloonOffsetTop = $(".balloon").offset().top - 100;
+        $(".balloon").headroom({
+            "offset": balloonOffsetTop,
+            "tolerance": 5,
+            "classes": {
+                initial:    'balloon',              // when element is initialised
+                pinned:     'balloon-pinned',       // when scrolling up
+                unpinned:   'balloon-unpinned',     // when scrolling down
+                top:        'balloon-top',          // when above offset
+                notTop:     'balloon-not-top',      // when below offset
+                bottom:     'balloon-bottom',       // when at bottom of scoll area
+                notBottom:  'balloon-not-bottom'    // when not at bottom of scroll area
+            }
+        });
+    }
+
     // home page
     // animate teaser text and image on scroll
     if(windowWidth > 416) {

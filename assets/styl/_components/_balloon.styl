@@ -1,0 +1,12 @@
+.balloon
+    @media $screen.md
+        position: absolute
+        left: calc(50% - 292px) // 292px = .l-half-section-content width / 2 => keep the .balloon centered
+        transform: translate(-50%, -50%)
+        transition: all 1s
+
+        &-pinned:not(.balloon-top)
+        &-unpinned
+            position: fixed
+            top: 100px
+            transform: translate(-50%, 0)
