@@ -21,9 +21,18 @@
         background-repeat: no-repeat
         background-position: right top
         background-size: 1.63em auto
+        font-size: 11vw
+        color: $colour.default
+        line-height: .8
 
         > span
             color: $colour.scarlet
+
+        @media $screen.xs
+            font-size: 2.625em
+
+        @media $screen.lg
+            font-size: 6.625em
 
     &-body
         position: relative

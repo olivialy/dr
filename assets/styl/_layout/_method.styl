@@ -1,0 +1,32 @@
+.l-method
+    h1
+        color: $colour.darkgrey
+        font-family: $font.body
+        font-size: 1.5em
+
+    h2
+        font-family: $font.body
+        font-size: 1em
+        text-transform: none
+
+    .border
+        margin: .5em auto 1em
+
+    &-intro
+        margin-right: auto
+        margin-left: auto
+        text-align: center
+
+    &-wheels
+        width: 673px // = wheels illustration width
+
+        img
+            display: none
+
+        @media $screen.md
+            position: relative
+            margin: 0 auto
+
+            img
+                display: block
+
